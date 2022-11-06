@@ -18,6 +18,10 @@
 
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
 
+        <el-tooltip :content="$t('settings.language')">
+          <language-select id="language-select" class="right-menu-item hover-effect" />
+        </el-tooltip>
+
         <el-tooltip content="布局大小" effect="dark" placement="bottom">
           <size-select id="size-select" class="right-menu-item hover-effect" />
         </el-tooltip>
@@ -31,7 +35,7 @@
           <template #dropdown>
             <el-dropdown-menu>
               <router-link to="/user/profile">
-                <el-dropdown-item>个人中心</el-dropdown-item>
+                <el-dropdown-item>{{ $t('settings.userCenter') }}</el-dropdown-item>
               </router-link>
               <el-dropdown-item command="setLayout">
                 <span>布局设置</span>
@@ -53,6 +57,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import TopNav from '@/components/TopNav'
 import Hamburger from '@/components/Hamburger'
 import Screenfull from '@/components/Screenfull'
+import LanguageSelect from '@/components/LanguageSelect'
 import SizeSelect from '@/components/SizeSelect'
 import HeaderSearch from '@/components/HeaderSearch'
 import RuoYiGit from '@/components/RuoYi/Git'

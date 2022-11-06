@@ -10,6 +10,7 @@ const useAppStore = defineStore(
         hide: false
       },
       device: 'desktop',
+      locale: 'zh',
       size: Cookies.get('size') || 'default'
     }),
     actions: {
@@ -32,6 +33,10 @@ const useAppStore = defineStore(
       },
       toggleDevice(device) {
         this.device = device
+      },
+      setLocale(locale) {
+        this.locale = locale;
+        Cookies.set('locale', locale)
       },
       setSize(size) {
         this.size = size;
